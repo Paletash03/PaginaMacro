@@ -1,4 +1,4 @@
-/* 1. CONFIGURACIÓN GENERAL */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,17 +7,17 @@
 }
 
 body {
-    background-color: #f4f7f6; /* Gris muy claro para el fondo */
+    background-color: #f4f7f6; /* Gris fondo */
     color: #333;
     line-height: 1.6;
 }
 
-/* 2. BARRA DE NAVEGACIÓN (HEADER) */
+/* header */
 header {
-    background-color: #6B1C3A; /* Guinda */
+    background-color: #6B1C3A;
     color: white;
     padding: 1rem 0;
-    position: sticky; /* El scroll */
+    position: sticky; /*scroll */
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -52,7 +52,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #D4A373; /* Dorado tenue al pasar el cursor */
+    color: #D4A373; /* Dorado pa cuando pasen mouse */
 }
 
 /* 3. SECCIONES PRINCIPALES */
@@ -89,7 +89,7 @@ hr {
     margin: 40px 0;
 }
 
-/* 4. PIE DE PÁGINA (FOOTER) */
+/* footer */
 footer {
     text-align: center;
     padding: 20px;
@@ -98,7 +98,7 @@ footer {
     margin-top: 40px;
 }
 
-/* 5. DISEÑO RESPONSIVO (Para tablets y celulares) */
+/* diseño responsivo */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -113,7 +113,7 @@ footer {
     section {
         padding: 25px;
     }
-    /* 6. CALCULADORA DE PUNTO DE EQUILIBRIO */
+    /* CALCULADORA DE PUNTO DE EQUILIBRIO */
 .calculadora {
     background: #fafafa;
     padding: 25px;
@@ -167,9 +167,9 @@ footer {
     padding: 15px;
     border-radius: 5px;
 }
-/* 7. LÍNEA DE TIEMPO (BLOG HISTÓRICO) */
+/* LÍNEA DE TIEMPO */
 .linea-tiempo {
-    border-left: 3px solid #6B1C3A; /* Línea principal guinda */
+    border-left: 3px solid #6B1C3A; 
     padding-left: 20px;
     margin-top: 30px;
     margin-left: 10px;
@@ -180,7 +180,6 @@ footer {
     position: relative;
 }
 
-/* El circulito de cada evento en la línea de tiempo */
 .evento::before {
     content: '';
     position: absolute;
@@ -207,7 +206,7 @@ footer {
     border-radius: 5px;
     border-left: 3px solid #e0e0e0;
 }
-/* 8. TARJETAS DE DATOS ECONÓMICOS (GRID) */
+/*TARJETAS DE DATOS ECONÓMICOS  */
 .grid-tarjetas {
     display: grid;
     /* Esto hace que las tarjetas se adapten mágicamente al tamaño de la pantalla */
@@ -232,7 +231,7 @@ footer {
 }
 
 .tarjeta h3 {
-    color: #6B1C3A; /* Guinda institucional */
+    color: #6B1C3A; 
     font-size: 1.2rem;
     margin-bottom: 12px;
     border-bottom: none;
@@ -246,7 +245,7 @@ footer {
 }
 
 .tarjeta ul {
-    list-style-type: none; /* Quitamos las viñetas normales */
+    list-style-type: none; 
     margin-left: 0;
     margin-top: 10px;
     font-size: 0.9rem;
