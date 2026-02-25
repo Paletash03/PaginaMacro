@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macroeconomía | Proyecto Final</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">MacroWeb IPN</div>
+            <ul>
+                <li><a href="#datos-economicos">Datos Económicos</a></li>
+                <li><a href="#simulador">Simulador Flujo Circular</a></li>
+                <li><a href="#blog-historico">Blog Histórico (1910-2020)</a></li>
+                <li><a href="#casos">Portafolio de Casos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="datos-economicos">
+            <h2>Plataforma de Datos Económicos</h2>
+            <p>Aquí irá tu investigación de NotebookLM sobre el Sistema de Cuentas Nacionales y los métodos de cálculo del PIB (Real y Nominal).</p>
+            </section>
+
+        <hr>
+
+        <section id="simulador">
+            <h2>Simulador: Flujo Circular del Ingreso</h2>
+            <p>El modelo de flujo circular muestra cómo interactúan los agentes económicos. Ingresa un nivel de ingreso y descubre cómo fluye el capital entre familias, empresas y el sector financiero.</p>
+            
+            
+            
+            <div class="calculadora">
+                <label for="ingreso-total">Ingreso Total de las Familias ($):</label>
+                <input type="number" id="ingreso-total" placeholder="Ej. 10000">
+
+                <label for="propension-consumo">Propensión Marginal al Consumo (ej. 0.8 para 80%):</label>
+                <input type="number" id="propension-consumo" step="0.1" max="0.99" min="0.01" placeholder="Ej. 0.8">
+
+                <button onclick="simularFlujo()">Simular Flujo</button>
+
+                <div id="resultado-flujo" style="margin-top: 20px; font-weight: bold; font-size: 1.1rem; padding: 15px; border-radius: 5px;"></div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="blog-historico">
+            <h2>Fluctuaciones y Crisis Económicas en México (1910-2020)</h2>
+            <p>Análisis del ciclo económico y las políticas económicas contemporáneas aplicadas en México a lo largo del tiempo.</p>
+            
+            <div class="linea-tiempo">
+                <div class="evento">
+                    <h4>1976 - Fin del Milagro Mexicano</h4>
+                    <p>Aquí pegarás tu investigación de NotebookLM sobre la devaluación del peso y el cambio de modelo económico.</p>
+                </div>
+                <div class="evento">
+                    <h4>1982 - Crisis de la Deuda Externa</h4>
+                    <p>Aquí irá la explicación sobre la caída de los precios del petróleo y la nacionalización de la banca.</p>
+                </div>
+                <div class="evento">
+                    <h4>1994 - El "Error de Diciembre"</h4>
+                    <p>Espacio para detallar la crisis de liquidez, la devaluación y la creación del Fobaproa.</p>
+                </div>
+                <div class="evento">
+                    <h4>2008 - Crisis Financiera Global</h4>
+                    <p>Describe cómo impactó la crisis hipotecaria de Estados Unidos en la economía mexicana.</p>
+                </div>
+                <div class="evento">
+                    <h4>2020 - Impacto de la Pandemia</h4>
+                    <p>Documenta el impacto económico contemporáneo y las políticas de estabilización recientes.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="casos">
+            <h2>Portafolio de Casos y Punto de Equilibrio</h2>
+            <p>El punto de equilibrio es el nivel de ventas donde los ingresos totales son iguales a los costos totales. En este punto, la empresa no gana ni pierde dinero.</p>
+            
+            <div class="calculadora">
+                <h3>Calculadora de Punto de Equilibrio</h3>
+                
+                <label for="costos-fijos">Costos Fijos Totales ($):</label>
+                <input type="number" id="costos-fijos" placeholder="Ej. 50000">
+
+                <label for="precio-venta">Precio de Venta por Unidad ($):</label>
+                <input type="number" id="precio-venta" placeholder="Ej. 150">
+
+                <label for="costo-variable">Costo Variable por Unidad ($):</label>
+                <input type="number" id="costo-variable" placeholder="Ej. 50">
+
+                <button onclick="calcularPuntoEquilibrio()">Calcular</button>
+
+                <div id="resultado-calculadora"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Proyecto Final - Licenciatura en Negocios Digitales</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
