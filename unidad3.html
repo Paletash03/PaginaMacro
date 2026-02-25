@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidades III y IV - Modelos y Equilibrio | Proyecto Final</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">MacroWeb IPN</div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="unidad1.html">I. Macroeconomía</a></li>
+                <li><a href="unidad2.html">II. Cuentas Nacionales</a></li>
+                <li><a href="unidad3.html">III-IV. Modelos</a></li>
+                <li><a href="unidad5.html">V. Crisis</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="unidad3">
+            <h2>Unidades III y IV. Modelos Macroeconómicos y Equilibrio</h2>
+            <p>En estas unidades analizamos la demanda y oferta agregadas, así como los diferentes modelos macroeconómicos (Clásico, Keynesiano, Monetarista) en el contexto de la globalización y el capitalismo moderno.</p>
+            
+            <hr style="margin: 25px 0;">
+
+            <h3>Portafolio de Casos: Cálculo del Punto de Equilibrio</h3>
+            <p>Como parte integral de las evidencias de aprendizaje de la materia, la siguiente herramienta permite determinar el nivel de producción y ventas en el que los ingresos totales se igualan a los costos totales, un concepto clave en la gestión y análisis financiero.</p>
+            
+            <div class="calculadora" style="margin-top: 20px;">
+                <h4 style="color: #6B1C3A; margin-bottom: 15px;">Calculadora Interactiva de Punto de Equilibrio</h4>
+                
+                <label for="costos-fijos">Costos Fijos Totales ($):</label>
+                <input type="number" id="costos-fijos" placeholder="Ej. 50000">
+
+                <label for="precio-venta">Precio de Venta por Unidad ($):</label>
+                <input type="number" id="precio-venta" placeholder="Ej. 150">
+
+                <label for="costo-variable">Costo Variable por Unidad ($):</label>
+                <input type="number" id="costo-variable" placeholder="Ej. 50">
+
+                <button onclick="calcularPuntoEquilibrio()">Calcular Punto de Equilibrio</button>
+
+                <div id="resultado-calculadora"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Proyecto Final - Licenciatura en Negocios Digitales | ESCA Santo Tomás</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

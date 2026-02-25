@@ -3,109 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Macroeconomía | Proyecto Final</title>
+    <title>Proyecto Final Macroeconomía | IPN</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .hero { text-align: center; padding: 60px 20px; background-color: #6B1C3A; color: white; border-radius: 10px; margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; color: white; border: none; }
+        .hero p { font-size: 1.2rem; color: #f4f7f6; max-width: 800px; margin: 0 auto; }
+        .equipo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
+        .miembro { background: #fff; padding: 15px; border-left: 4px solid #D4A373; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); font-weight: 500; color: #333; }
+    </style>
 </head>
-<body>
-
-    <header>
+<header>
         <nav>
             <div class="logo">MacroWeb IPN</div>
             <ul>
-                <li><a href="#datos-economicos">Datos Económicos</a></li>
-                <li><a href="#simulador">Simulador Flujo Circular</a></li>
-                <li><a href="#blog-historico">Blog Histórico (1910-2020)</a></li>
-                <li><a href="#casos">Portafolio de Casos</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="unidad1.html">I. Macroeconomía</a></li>
+                <li><a href="unidad2.html">II. Cuentas Nacionales</a></li>
+                <li><a href="unidad3.html">III-IV. Modelos</a></li>
+                <li><a href="unidad5.html">V. Crisis</a></li>
             </ul>
         </nav>
     </header>
+<body>
+
+    <div id="header-container"></div>
 
     <main>
-        <section id="datos-economicos">
-            <h2>Plataforma de Datos Económicos</h2>
-            <p>Aquí irá tu investigación de NotebookLM sobre el Sistema de Cuentas Nacionales y los métodos de cálculo del PIB (Real y Nominal).</p>
-            </section>
-
-        <hr>
-
-        <section id="simulador">
-            <h2>Simulador: Flujo Circular del Ingreso</h2>
-            <p>El modelo de flujo circular muestra cómo interactúan los agentes económicos. Ingresa un nivel de ingreso y descubre cómo fluye el capital entre familias, empresas y el sector financiero.</p>
-            
-            
-            
-            <div class="calculadora">
-                <label for="ingreso-total">Ingreso Total de las Familias ($):</label>
-                <input type="number" id="ingreso-total" placeholder="Ej. 10000">
-
-                <label for="propension-consumo">Propensión Marginal al Consumo (ej. 0.8 para 80%):</label>
-                <input type="number" id="propension-consumo" step="0.1" max="0.99" min="0.01" placeholder="Ej. 0.8">
-
-                <button onclick="simularFlujo()">Simular Flujo</button>
-
-                <div id="resultado-flujo" style="margin-top: 20px; font-weight: bold; font-size: 1.1rem; padding: 15px; border-radius: 5px;"></div>
-            </div>
+        <section class="hero">
+            <h1>Instituto Politécnico Nacional</h1>
+            <p>Escuela Superior de Comercio y Administración, Unidad Santo Tomás</p>
+            <p style="margin-top: 10px; font-weight: bold; color: #D4A373;">Licenciatura en Negocios Digitales | Macroeconomía</p>
         </section>
 
-        <hr>
-
-        <section id="blog-historico">
-            <h2>Fluctuaciones y Crisis Económicas en México (1910-2020)</h2>
-            <p>Análisis del ciclo económico y las políticas económicas contemporáneas aplicadas en México a lo largo del tiempo.</p>
-            
-            <div class="linea-tiempo">
-                <div class="evento">
-                    <h4>1976 - Fin del Milagro Mexicano</h4>
-                    <p>Aquí pegarás tu investigación de NotebookLM sobre la devaluación del peso y el cambio de modelo económico.</p>
-                </div>
-                <div class="evento">
-                    <h4>1982 - Crisis de la Deuda Externa</h4>
-                    <p>Aquí irá la explicación sobre la caída de los precios del petróleo y la nacionalización de la banca.</p>
-                </div>
-                <div class="evento">
-                    <h4>1994 - El "Error de Diciembre"</h4>
-                    <p>Espacio para detallar la crisis de liquidez, la devaluación y la creación del Fobaproa.</p>
-                </div>
-                <div class="evento">
-                    <h4>2008 - Crisis Financiera Global</h4>
-                    <p>Describe cómo impactó la crisis hipotecaria de Estados Unidos en la economía mexicana.</p>
-                </div>
-                <div class="evento">
-                    <h4>2020 - Impacto de la Pandemia</h4>
-                    <p>Documenta el impacto económico contemporáneo y las políticas de estabilización recientes.</p>
-                </div>
-            </div>
+        <section id="contexto">
+            <h2>Sobre este Proyecto</h2>
+            <p>Bienvenidos a nuestra plataforma interactiva de Macroeconomía. Este sitio web fue desarrollado como proyecto final para analizar los modelos macroeconómicos en el contexto global a partir del sistema de cuentas, la demanda, la oferta y las políticas de estabilización.</p>
         </section>
 
-        <hr>
-
-        <section id="casos">
-            <h2>Portafolio de Casos y Punto de Equilibrio</h2>
-            <p>El punto de equilibrio es el nivel de ventas donde los ingresos totales son iguales a los costos totales. En este punto, la empresa no gana ni pierde dinero.</p>
-            
-            <div class="calculadora">
-                <h3>Calculadora de Punto de Equilibrio</h3>
-                
-                <label for="costos-fijos">Costos Fijos Totales ($):</label>
-                <input type="number" id="costos-fijos" placeholder="Ej. 50000">
-
-                <label for="precio-venta">Precio de Venta por Unidad ($):</label>
-                <input type="number" id="precio-venta" placeholder="Ej. 150">
-
-                <label for="costo-variable">Costo Variable por Unidad ($):</label>
-                <input type="number" id="costo-variable" placeholder="Ej. 50">
-
-                <button onclick="calcularPuntoEquilibrio()">Calcular</button>
-
-                <div id="resultado-calculadora"></div>
+        <section id="equipo">
+            <h2>Equipo 5 del Grupo 2GM1</h2>
+            <p>Este proyecto fue investigado, diseñado y programado por:</p>
+            <div class="equipo-grid">
+                <div class="miembro">Herrera Jiménez Juan Andres</div>
+                <div class="miembro">Gonzales Saavedra Gabriel Alejandro</div>
+                <div class="miembro">De la Peña Moralez Zoe</div>
+                <div class="miembro">Mancilla Hernández Génesis Yamilett</div>
+                <div class="miembro">Méndez Galaviz Ian Kaled</div>
             </div>
         </section>
     </main>
 
+    <div id="footer-container"></div>
     <footer>
-        <p>Proyecto Final - Licenciatura en Negocios Digitales</p>
+        <p>Proyecto Final - Licenciatura en Negocios Digitales | ESCA Santo Tomás</p>
     </footer>
-
     <script src="app.js"></script>
 </body>
 </html>

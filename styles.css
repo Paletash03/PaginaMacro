@@ -207,4 +207,72 @@ footer {
     border-radius: 5px;
     border-left: 3px solid #e0e0e0;
 }
+/* 8. TARJETAS DE DATOS ECONÓMICOS (GRID) */
+.grid-tarjetas {
+    display: grid;
+    /* Esto hace que las tarjetas se adapten mágicamente al tamaño de la pantalla */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.tarjeta {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-top: 4px solid #D4A373; /* Borde superior con el tono dorado */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px); /* Efecto de flotar hacia arriba */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.tarjeta h3 {
+    color: #6B1C3A; /* Guinda institucional */
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.tarjeta p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.tarjeta ul {
+    list-style-type: none; /* Quitamos las viñetas normales */
+    margin-left: 0;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.tarjeta ul li {
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #eee;
+    margin-bottom: 5px;
+}
+
+.tarjeta ul li:last-child {
+    border-bottom: none;
+}
+
+.tarjeta .formula {
+    background-color: #f4f7f6;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    margin: 15px 0;
+    font-family: monospace;
+    font-size: 1.1rem;
+}
 }

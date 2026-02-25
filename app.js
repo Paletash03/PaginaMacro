@@ -58,4 +58,20 @@ function calcularPuntoEquilibrio() {
         📈 <strong>Multiplicador de la Inversión:</strong> ${multiplicador.toFixed(2)}
     `;
 }
+// Función para cargar componentes (Header y Footer)
+document.addEventListener("DOMContentLoaded", function() {
+    // Cargar el Header
+    fetch("components/header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("header-container").innerHTML = data;
+        });
+
+    // Cargar el Footer
+    fetch("components/footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer-container").innerHTML = data;
+        });
+});
 }

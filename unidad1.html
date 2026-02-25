@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad I - Macroeconomía | Proyecto Final</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">MacroWeb IPN</div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="unidad1.html">I. Macroeconomía</a></li>
+                <li><a href="unidad2.html">II. Cuentas Nacionales</a></li>
+                <li><a href="unidad3.html">III-IV. Modelos</a></li>
+                <li><a href="unidad5.html">V. Crisis</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="unidad1">
+            <h2>Unidad I. Macroeconomía</h2>
+
+            <h3>1.1 Macroeconomía</h3>
+            
+            <h4>1.1.1 Visión general</h4>
+            <p>La macroeconomía se define como el estudio del comportamiento y funcionamiento de la economía nacional y de la economía global en su conjunto.</p>
+
+            <h4>1.1.2 Objetivos y campo de estudio</h4>
+            <p>El propósito central y los desafíos de la política macroeconómica radican en utilizar los instrumentos disponibles (política fiscal y política monetaria) para lograr metas como fomentar el crecimiento económico a largo plazo, estabilizar el ciclo económico, reducir las tasas de desempleo, controlar la inflación e impedir que existan déficits fiscales o comerciales desproporcionados.</p>
+
+            <h4>1.1.3 Supuestos de la economía</h4>
+            <p>Los economistas postulan supuestos para comprender el mundo de una forma más fácil. Uno de los supuestos analíticos primordiales en esta ciencia es el de <em>ceteris paribus</em> (las demás cosas permanecen iguales o constantes), empleado para aislar la relación de causa y efecto entre variables específicas.</p>
+
+            <hr style="margin: 25px 0;">
+
+            <h3>1.2 Diferencia entre microeconomía y macroeconomía</h3>
+            <p>La microeconomía estudia el modo en que los entes individuales, concretamente los hogares y las empresas, toman decisiones, así como la forma en que interactúan dentro de mercados específicos. A diferencia de la microeconomía, la macroeconomía no mira componentes aislados, sino la imagen panorámica de la actividad agregada, enfocándose en las fluctuaciones y tendencias de la economía global y nacional.</p>
+
+            <hr style="margin: 25px 0;">
+
+            <h3>1.3 Relación de la macroeconomía con otras disciplinas</h3>
+            <p>El estudio formal recurre a las Matemáticas como pilar metodológico para otorgar rigor. Al ser una ciencia social, también interactúa con la Historia para entender el origen de las instituciones, la Sociología, la Biología, y la Psicología para la interpretación del comportamiento humano.</p>
+
+            <hr style="margin: 25px 0;">
+
+            <h3>1.4 Indicadores macroeconómicos</h3>
+            <div class="grid-tarjetas" style="margin-top: 15px;">
+                <div class="tarjeta">
+                    <h4>1.4.1 Mercado laboral</h4>
+                    <p>Espacio económico donde interactúan la oferta y la demanda de trabajo. Sus indicadores principales son la tasa de desempleo y la tasa de participación.</p>
+                </div>
+                <div class="tarjeta">
+                    <h4>1.4.2 Finanzas públicas</h4>
+                    <p>Se refieren al presupuesto del Estado, compuesto por las compras gubernamentales de bienes y servicios y los ingresos provenientes de impuestos netos.</p>
+                </div>
+                <div class="tarjeta">
+                    <h4>1.4.3 Base monetaria y costo del dinero</h4>
+                    <p>La base monetaria es la suma de los billetes y monedas en circulación. El costo del dinero tiene un precio, el cual es la tasa de interés.</p>
+                </div>
+                <div class="tarjeta">
+                    <h4>1.4.4 Comercio exterior e inversión</h4>
+                    <p>El comercio exterior constituye las relaciones de intercambio de una economía abierta, medido por exportaciones e importaciones. La inversión es la compra de nuevos bienes de capital.</p>
+                </div>
+            </div>
+
+            <hr style="margin: 40px 0;">
+
+            <h3>1.5 Los modelos de flujo circular del ingreso</h3>
+            <p>Es un esquema visual y analítico de la economía que ilustra cómo están organizadas las transacciones económicas, mostrando el movimiento de recursos, bienes y dinero.</p>
+
+            
+
+            <h4>1.5.1 Componentes</h4>
+            <ul>
+                <li><strong>Familias:</strong> Son los agentes que poseen los factores de producción.</li>
+                <li><strong>Empresas:</strong> Compran o contratan los factores de producción de las familias para producir bienes y servicios.</li>
+                <li><strong>Gobiernos:</strong> Compran bienes y servicios a las empresas y recaudan impuestos.</li>
+                <li><strong>Sector Externo:</strong> Entra en la dinámica mediante las exportaciones y las importaciones.</li>
+            </ul>
+
+            <h4 style="margin-top: 15px;">1.5.2 Características</h4>
+            <ul>
+                <li><strong>Flujos Reales:</strong> Representan el intercambio material o físico en la economía.</li>
+                <li><strong>Flujos Monetarios:</strong> Representan el dinero que paga los flujos reales.</li>
+            </ul>
+            <p>La característica analítica más importante de este modelo circular es que demuestra una identidad fundamental de la macroeconomía: el ingreso agregado siempre es igual al gasto agregado.</p>
+            
+            <div class="calculadora" style="margin-top: 25px;">
+                <h4 style="color: #6B1C3A; margin-bottom: 10px;">Simulador Interactivo del Flujo Circular</h4>
+                <label for="ingreso-total">Ingreso Total de las Familias ($):</label>
+                <input type="number" id="ingreso-total" placeholder="Ej. 10000">
+
+                <label for="propension-consumo">Propensión Marginal al Consumo (ej. 0.8 para 80%):</label>
+                <input type="number" id="propension-consumo" step="0.1" max="0.99" min="0.01" placeholder="Ej. 0.8">
+
+                <button onclick="simularFlujo()">Simular Flujo</button>
+
+                <div id="resultado-flujo" style="margin-top: 20px; font-weight: bold; font-size: 1.1rem; padding: 15px; border-radius: 5px;"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Proyecto Final - Licenciatura en Negocios Digitales | ESCA Santo Tomás</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
