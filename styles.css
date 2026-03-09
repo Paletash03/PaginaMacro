@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -62,7 +61,8 @@ main {
     padding: 0 20px;
 }
 
-section {
+/* Se agregó 'article' para que las entradas del blog tengan el mismo diseño */
+section, article {
     background-color: white;
     padding: 40px;
     margin-bottom: 30px;
@@ -110,10 +110,13 @@ footer {
         justify-content: center;
     }
     
-    section {
+    /* Se agregó 'article' también en la versión móvil */
+    section, article {
         padding: 25px;
     }
-    /* CALCULADORA DE PUNTO DE EQUILIBRIO */
+} /* <--- ¡AQUÍ SE CERRÓ LA MEDIA QUERY! */
+
+/* CALCULADORA DE PUNTO DE EQUILIBRIO */
 .calculadora {
     background: #fafafa;
     padding: 25px;
@@ -167,6 +170,7 @@ footer {
     padding: 15px;
     border-radius: 5px;
 }
+
 /* LÍNEA DE TIEMPO */
 .linea-tiempo {
     border-left: 3px solid #6B1C3A; 
@@ -193,7 +197,7 @@ footer {
 }
 
 .evento h4 {
-    color: #D4A373; /* Dorado */
+    color: #B07D4A; /* Dorado oscurecido para cumplir con normas de accesibilidad de contraste */
     margin-bottom: 8px;
     font-size: 1.1rem;
 }
@@ -206,6 +210,7 @@ footer {
     border-radius: 5px;
     border-left: 3px solid #e0e0e0;
 }
+
 /*TARJETAS DE DATOS ECONÓMICOS  */
 .grid-tarjetas {
     display: grid;
@@ -218,7 +223,7 @@ footer {
 .tarjeta {
     background-color: #ffffff;
     border: 1px solid #e0e0e0;
-    border-top: 4px solid #D4A373; /* Borde superior con el tono dorado */
+    border-top: 4px solid #D4A373; /* Borde superior con el tono dorado original */
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
@@ -273,5 +278,4 @@ footer {
     margin: 15px 0;
     font-family: monospace;
     font-size: 1.1rem;
-}
 }

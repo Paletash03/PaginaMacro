@@ -9,11 +9,13 @@
         .hero { text-align: center; padding: 60px 20px; background-color: #6B1C3A; color: white; border-radius: 10px; margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .hero h1 { font-size: 2.5rem; margin-bottom: 15px; color: white; border: none; }
         .hero p { font-size: 1.2rem; color: #f4f7f6; max-width: 800px; margin: 0 auto; }
+        .hero-subtitle { margin-top: 10px; font-weight: bold; color: #B07D4A; } 
         .equipo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
         .miembro { background: #fff; padding: 15px; border-left: 4px solid #D4A373; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); font-weight: 500; color: #333; }
     </style>
 </head>
-<header>
+<body>
+    <header>
         <nav>
             <div class="logo">IPN</div>
             <ul>
@@ -25,21 +27,18 @@
             </ul>
         </nav>
     </header>
-<body>
-
-    <div id="header-container"></div>
 
     <main>
         <section class="hero">
             <h1>Instituto Politécnico Nacional</h1>
             <p>Escuela Superior de Comercio y Administración, Unidad Santo Tomás</p>
-            <p style="margin-top: 10px; font-weight: bold; color: #D4A373;">Licenciatura en Negocios Digitales | Macroeconomía</p>
+            <p class="hero-subtitle">Licenciatura en Negocios Digitales | Macroeconomía</p>
         </section>
 
-        <section id="contexto">
+        <article id="contexto">
             <h2>Sobre este Proyecto</h2>
             <p>Bienvenidos a nuestra plataforma interactiva de Macroeconomía. Este sitio web fue desarrollado como proyecto final para analizar los modelos macroeconómicos en el contexto global a partir del sistema de cuentas, la demanda, la oferta y las políticas de estabilización.</p>
-        </section>
+        </article>
 
         <section id="equipo">
             <h2>Equipo 5 del Grupo 2GM1</h2>
@@ -54,7 +53,6 @@
         </section>
     </main>
 
-    <div id="footer-container"></div>
     <footer>
         <p>Proyecto Final - Licenciatura en Negocios Digitales | ESCA Santo Tomás</p>
     </footer>
