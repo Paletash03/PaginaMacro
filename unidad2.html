@@ -29,6 +29,25 @@
             height: 36px;
             accent-color: #7a1030;
         }
+        .pdf-viewer {
+            margin: 20px 0 30px 0;
+            border: 2px solid #7a1030;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .pdf-viewer-header {
+            background: #7a1030;
+            color: white;
+            padding: 10px 16px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .pdf-viewer iframe {
+            display: block;
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -50,12 +69,19 @@
         <section id="unidad2">
             <h2>Unidad II. Sistema de Cuentas Nacionales</h2>
 
+            <!-- 🔊 AUDIO GENERAL — reemplaza "audios/unidad2.mp3" con el nombre de tu archivo -->
             <div class="audio-player">
                 <span>🎧 Audio de la unidad</span>
                 <audio controls>
                     <source src="audios/unidad2.mp3" type="audio/mpeg">
                     Tu navegador no soporta audio HTML5.
                 </audio>
+            </div>
+
+            <!-- 📄 PDF GENERAL — reemplaza "pdfs/unidad2.pdf" con el nombre de tu archivo -->
+            <div class="pdf-viewer">
+                <div class="pdf-viewer-header">📄 Material de la Unidad II</div>
+                <iframe src="pdfs/unidad2.pdf"></iframe>
             </div>
 
             <h3>2.1 Sistema de Cuentas Nacionales (SCN)</h3>
