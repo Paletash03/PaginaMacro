@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unidad IV - Modelos Macroeconómicos | Retroalimentación</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  body { font-family: 'Segoe UI', sans-serif; background: #f4f4f4; color: #333; }
+  .quiz-container { max-width: 860px; margin: 30px auto; padding: 0 20px 60px; }
+  h1 { color: #7a1030; border-bottom: 3px solid #7a1030; padding-bottom: 10px; }
+  .activity { background: white; border-radius: 10px; padding: 28px; margin-bottom: 32px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+  .activity h2 { color: #7a1030; margin-top: 0; font-size: 1.1rem; display:flex; align-items:center; gap:8px; }
+  .activity h2 span { background:#7a1030; color:white; border-radius:50%; width:28px; height:28px; display:inline-flex; align-items:center; justify-content:center; font-size:0.85rem; flex-shrink:0; }
+  .question { margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1px solid #eee; }
+  .question:last-of-type { border-bottom: none; }
+  .question p { font-weight: 600; margin-bottom: 10px; }
+  .options label { display: flex; align-items: flex-start; gap: 8px; padding: 8px 10px; border-radius: 6px; cursor: pointer; transition: background 0.15s; margin-bottom: 5px; }
+  .options label:hover { background: #f9f2f4; }
+  .options input[type=radio] { margin-top: 3px; accent-color: #7a1030; flex-shrink:0; }
+  .feedback { margin-top: 8px; padding: 8px 12px; border-radius: 6px; font-size: 0.88rem; display: none; }
+  .feedback.correct { background: #e8f5e9; color: #2e7d32; border-left: 4px solid #4caf50; }
+  .feedback.incorrect { background: #fce4ec; color: #b71c1c; border-left: 4px solid #f44336; }
+  .btn-check { background: #7a1030; color: white; border: none; padding: 10px 22px; border-radius: 6px; cursor: pointer; font-size: 0.95rem; margin-top: 8px; }
+  .btn-check:hover { background: #5a0c22; }
+  .btn-reset { background: #999; color: white; border: none; padding: 8px 18px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; margin-left: 8px; }
+  .score-box { background: #7a1030; color: white; padding: 14px 20px; border-radius: 8px; margin-top: 18px; font-weight: bold; display: none; text-align:center; font-size:1.05rem; }
+  /* TF */
+  .tf-btn { padding: 8px 20px; border: 2px solid #7a1030; border-radius: 6px; cursor: pointer; font-size: 0.9rem; background: white; color: #7a1030; margin-right: 8px; transition: all 0.15s; }
+  .tf-btn:hover, .tf-btn.selected { background: #7a1030; color: white; }
+  /* MATCH */
+  .match-container { display: flex; gap: 20px; }
+  .match-col { flex: 1; }
+  .match-item { padding: 10px 14px; border: 2px solid #ddd; border-radius: 8px; margin-bottom: 8px; cursor: pointer; transition: all 0.15s; font-size: 0.88rem; background: white; }
+  .match-item:hover { border-color: #7a1030; }
+  .match-item.selected { border-color: #7a1030; background: #f9f2f4; }
+  .match-item.matched-correct { border-color: #4caf50; background: #e8f5e9; cursor: default; }
+  .match-item.matched-wrong { border-color: #f44336; background: #fce4ec; }
+  .match-score { font-weight: bold; margin-top: 10px; color: #7a1030; }
+  /* CROSSWORD */
+  .cw-grid { display: inline-grid; gap: 2px; margin: 16px 0; }
+  .cw-cell { width: 42px; height: 42px; border: 2px solid #7a1030; display: flex; align-items: center; justify-content: center; position: relative; background: white; font-size: 1rem; }
+  .cw-cell.black { background: #7a1030; border-color: #7a1030; }
+  .cw-cell input { width: 100%; height: 100%; border: none; text-align: center; font-size: 1.1rem; font-weight: bold; text-transform: uppercase; background: transparent; outline: none; color: #333; }
+  .cw-cell.correct-cell { background: #e8f5e9; }
+  .cw-cell.wrong-cell { background: #fce4ec; }
+  .cw-num { position: absolute; top: 1px; left: 2px; font-size: 0.52rem; color: #7a1030; font-weight: bold; line-height: 1; }
+  .cw-clues { display: flex; gap: 30px; margin-top: 10px; font-size: 0.88rem; }
+  .cw-clues div { flex: 1; }
+  .cw-clues h4 { color: #7a1030; margin: 0 0 6px; }
+  .cw-clues ol { margin: 0; padding-left: 18px; }
+  .cw-clues li { margin-bottom: 5px; }
+</style>
+</head>
+<body>
+<div class="quiz-container">
+  <h1>Unidad IV - Modelos Macroeconómicos</h1>
+
+  <!-- ACTIVIDAD 1: OPCIÓN MÚLTIPLE -->
+  <div class="activity" id="act1">
+    <h2><span>1</span> Opción Múltiple</h2>
+    <div id="mc-questions"></div>
+    <div style="margin-top:10px;">
+      <button class="btn-check" onclick="checkMC()">Verificar respuestas</button>
+      <button class="btn-reset" onclick="resetMC()">Reiniciar</button>
+    </div>
+    <div class="score-box" id="mc-score"></div>
+  </div>
+
+  <!-- ACTIVIDAD 2: VERDADERO O FALSO -->
+  <div class="activity" id="act2">
+    <h2><span>2</span> Verdadero o Falso</h2>
+    <div id="tf-questions"></div>
+    <div style="margin-top:10px;">
+      <button class="btn-check" onclick="checkTF()">Verificar respuestas</button>
+      <button class="btn-reset" onclick="resetTF()">Reiniciar</button>
+    </div>
+    <div class="score-box" id="tf-score"></div>
+  </div>
+
+  <!-- ACTIVIDAD 3: RELACIONAR COLUMNAS -->
+  <div class="activity" id="act3">
+    <h2><span>3</span> Relacionar Columnas</h2>
+    <p style="font-size:0.88rem;color:#666;margin-top:0;">Selecciona un concepto de la izquierda y luego su definición de la derecha.</p>
+    <div class="match-container">
+      <div class="match-col" id="match-left"></div>
+      <div class="match-col" id="match-right"></div>
+    </div>
+    <div class="match-score" id="match-score"></div>
+    <div style="margin-top:10px;">
+      <button class="btn-reset" onclick="resetMatch()">Reiniciar</button>
+    </div>
+  </div>
+
+  <!-- ACTIVIDAD 4: CRUCIGRAMA -->
+  <div class="activity" id="act4">
+    <h2><span>4</span> Crucigrama</h2>
+    <div id="cw-grid-container"></div>
+    <div class="cw-clues" id="cw-clues-container"></div>
+    <div style="margin-top:14px;">
+      <button class="btn-check" onclick="checkCW()">Verificar crucigrama</button>
+      <button class="btn-reset" onclick="resetCW()">Reiniciar</button>
+    </div>
+    <div class="score-box" id="cw-score"></div>
+  </div>
+</div>
+
+<script>
+// ========== DATA ==========
+const mcData = [{"q": "Según el modelo clásico, ¿qué garantiza el pleno empleo?", "opts": ["La política fiscal expansiva", "Los precios y salarios flexibles que equilibran los mercados", "La intervención del banco central", "El gasto gubernamental"], "ans": 1}, {"q": "¿Cuál es la principal diferencia del modelo keynesiano?", "opts": ["Considera que el mercado siempre se equilibra solo", "Los precios y salarios son rígidos a la baja en el corto plazo", "Rechaza toda forma de intervención estatal", "Se basa exclusivamente en la oferta monetaria"], "ans": 1}, {"q": "¿Cuál es la función principal del FMI?", "opts": ["Financiar infraestructura a largo plazo", "Regular el comercio internacional", "Proveer financiamiento temporal para desequilibrios de balanza de pagos", "Establecer las tasas de interés mundiales"], "ans": 2}, {"q": "¿Qué establece la \"Trinidad Imposible\"?", "opts": ["Ningún país puede crecer sin comercio exterior", "No se pueden tener simultáneamente tipo de cambio fijo, libre movilidad de capitales y política monetaria autónoma", "Las economías planificadas son más eficientes", "El FMI, BM y OMC son incompatibles"], "ans": 1}, {"q": "¿Qué caracteriza a las economías planificadas?", "opts": ["El mercado determina qué, cómo y para quién producir", "Las decisiones económicas se resuelven mediante la planificación centralizada del Estado", "Las empresas privadas controlan los medios de producción", "La política monetaria es completamente autónoma"], "ans": 1}];
+const tfData = [{"q": "Los monetaristas favorecen políticas fiscales discrecionales para estabilizar la economía.", "ans": false, "exp": "Falso. Los monetaristas rechazan las políticas discrecionales y prefieren reglas monetarias fijas."}, {"q": "El Banco Mundial otorga préstamos para erradicar la pobreza y financiar infraestructura.", "ans": true, "exp": "Correcto. A diferencia del FMI, el Banco Mundial se enfoca en el desarrollo a largo plazo."}, {"q": "En el modelo keynesiano, el desempleo involuntario es imposible.", "ans": false, "exp": "Falso. El keynesianismo precisamente argumenta que el desempleo involuntario existe por la rigidez de precios."}, {"q": "La OMC vigila los acuerdos de comercio internacional y evita guerras arancelarias.", "ans": true, "exp": "Correcto. La OMC es el árbitro del comercio multilateral y promueve la apertura comercial."}, {"q": "México adoptó tipo de cambio fijo como respuesta a la Trinidad Imposible.", "ans": false, "exp": "Falso. México adoptó la libre flotación del peso, renunciando al tipo de cambio fijo."}];
+const matchLeft = ["Modelo Clásico", "Modelo Keynesiano", "FMI", "Banco Mundial", "OMC"];
+const matchRight = ["Mercados con precios y salarios flexibles", "Rigidez de precios y necesidad de intervención estatal", "Financiamiento temporal para balanza de pagos", "Préstamos para desarrollo e infraestructura", "Supervisión de acuerdos de comercio multilateral"];
+const matchAns = [0, 1, 2, 3, 4];
+const cwGrid = [["E", "S", "T", "A", "D", "O"], [null, "U", null, "R", null, "B"], [null, "B", null, "C", null, "R"], [null, "I", null, "O", null, "A"], ["C", "R", "I", "S", "I", "S"]];
+const cwCluesAcross = [[0, "Institución que puede intervenir en la economía"], [4, "Período de contracción económica severa"]];
+const cwCluesDown = [[1, "Lo que hacen los precios durante la inflación"], [3, "Instrumentos de política en plural"], [5, "Proyectos de infraestructura del gobierno"]];
+const cwWordsAcross = {"0": "ESTADO", "4": "CRISIS"};
+const cwWordsDown = {"1": "SUBIR", "3": "ARCOS", "5": "OBRAS"};
+
+// ========== MC ==========
+function buildMC() {
+  const container = document.getElementById('mc-questions');
+  container.innerHTML = '';
+  mcData.forEach((q, i) => {
+    let optsHTML = q.opts.map((o, j) => `
+      <label>
+        <input type="radio" name="mc${i}" value="${j}">
+        ${String.fromCharCode(65+j)}. ${o}
+      </label>`).join('');
+    container.innerHTML += `
+      <div class="question" id="mc-q${i}">
+        <p>${i+1}. ${q.q}</p>
+        <div class="options">${optsHTML}</div>
+        <div class="feedback" id="mc-fb${i}"></div>
+      </div>`;
+  });
+}
+function checkMC() {
+  let score = 0;
+  mcData.forEach((q, i) => {
+    const sel = document.querySelector(`input[name="mc${i}"]:checked`);
+    const fb = document.getElementById(`mc-fb${i}`);
+    if (!sel) { fb.textContent = '⚠️ Selecciona una opción.'; fb.className='feedback incorrect'; fb.style.display='block'; return; }
+    const val = parseInt(sel.value);
+    if (val === q.ans) {
+      fb.textContent = '✅ ¡Correcto!';
+      fb.className = 'feedback correct';
+      score++;
+    } else {
+      fb.textContent = `❌ Incorrecto. La respuesta correcta es: ${String.fromCharCode(65+q.ans)}. ${q.opts[q.ans]}`;
+      fb.className = 'feedback incorrect';
+    }
+    fb.style.display = 'block';
+  });
+  const sc = document.getElementById('mc-score');
+  sc.textContent = `Puntaje final: ${score} / ${mcData.length} (${Math.round(score/mcData.length*100)}%)`;
+  sc.style.display = 'block';
+}
+function resetMC() {
+  document.querySelectorAll('input[type=radio]').forEach(r => r.checked = false);
+  document.querySelectorAll('[id^=mc-fb]').forEach(f => { f.style.display='none'; f.textContent=''; });
+  document.getElementById('mc-score').style.display = 'none';
+}
+
+// ========== TF ==========
+function buildTF() {
+  const container = document.getElementById('tf-questions');
+  container.innerHTML = '';
+  tfData.forEach((q, i) => {
+    container.innerHTML += `
+      <div class="question" id="tf-q${i}">
+        <p>${i+1}. ${q.q}</p>
+        <div>
+          <button class="tf-btn" id="tf-v${i}" onclick="selectTF(${i}, true)">✔ Verdadero</button>
+          <button class="tf-btn" id="tf-f${i}" onclick="selectTF(${i}, false)">✘ Falso</button>
+        </div>
+        <div class="feedback" id="tf-fb${i}"></div>
+      </div>`;
+  });
+}
+const tfAnswers = {};
+function selectTF(i, val) {
+  tfAnswers[i] = val;
+  document.getElementById(`tf-v${i}`).classList.toggle('selected', val === true);
+  document.getElementById(`tf-f${i}`).classList.toggle('selected', val === false);
+}
+function checkTF() {
+  let score = 0;
+  tfData.forEach((q, i) => {
+    const fb = document.getElementById(`tf-fb${i}`);
+    if (tfAnswers[i] === undefined) { fb.textContent='⚠️ Selecciona una opción.'; fb.className='feedback incorrect'; fb.style.display='block'; return; }
+    if (tfAnswers[i] === q.ans) {
+      fb.textContent = `✅ ¡Correcto! ${q.exp}`;
+      fb.className = 'feedback correct';
+      score++;
+    } else {
+      fb.textContent = `❌ Incorrecto. ${q.exp}`;
+      fb.className = 'feedback incorrect';
+    }
+    fb.style.display = 'block';
+  });
+  const sc = document.getElementById('tf-score');
+  sc.textContent = `Puntaje final: ${score} / ${tfData.length} (${Math.round(score/tfData.length*100)}%)`;
+  sc.style.display = 'block';
+}
+function resetTF() {
+  Object.keys(tfAnswers).forEach(k => delete tfAnswers[k]);
+  document.querySelectorAll('.tf-btn').forEach(b => b.classList.remove('selected'));
+  document.querySelectorAll('[id^=tf-fb]').forEach(f => { f.style.display='none'; f.textContent=''; });
+  document.getElementById('tf-score').style.display = 'none';
+}
+
+// ========== MATCH ==========
+let selectedLeft = null;
+const matchedPairs = {};
+function buildMatch() {
+  const leftContainer = document.getElementById('match-left');
+  const rightContainer = document.getElementById('match-right');
+  leftContainer.innerHTML = '';
+  rightContainer.innerHTML = '';
+  const rightOrder = [...Array(matchRight.length).keys()].sort(() => Math.random()-0.5);
+  matchLeft.forEach((t, i) => {
+    leftContainer.innerHTML += `<div class="match-item" id="ml${i}" onclick="selectLeft(${i})">${i+1}. ${t}</div>`;
+  });
+  rightOrder.forEach(ri => {
+    rightContainer.innerHTML += `<div class="match-item" id="mr${ri}" data-idx="${ri}" onclick="selectRight(${ri})">${matchRight[ri]}</div>`;
+  });
+}
+function selectLeft(i) {
+  if (matchedPairs[i] !== undefined) return;
+  document.querySelectorAll('#match-left .match-item').forEach(el => el.classList.remove('selected'));
+  selectedLeft = i;
+  document.getElementById(`ml${i}`).classList.add('selected');
+}
+function selectRight(ri) {
+  if (selectedLeft === null) return;
+  const expectedRight = matchAns[selectedLeft];
+  const leftEl = document.getElementById(`ml${selectedLeft}`);
+  const rightEl = document.getElementById(`mr${ri}`);
+  if (ri === expectedRight) {
+    leftEl.classList.remove('selected'); leftEl.classList.add('matched-correct');
+    rightEl.classList.add('matched-correct');
+    matchedPairs[selectedLeft] = ri;
+  } else {
+    leftEl.classList.remove('selected'); leftEl.classList.add('matched-wrong');
+    rightEl.classList.add('matched-wrong');
+    setTimeout(() => { leftEl.classList.remove('matched-wrong'); rightEl.classList.remove('matched-wrong'); }, 900);
+  }
+  selectedLeft = null;
+  const correct = Object.keys(matchedPairs).length;
+  if (correct === matchLeft.length) {
+    document.getElementById('match-score').textContent = `✅ ¡Completado! ${correct} / ${matchLeft.length} correctos.`;
+  } else {
+    document.getElementById('match-score').textContent = `${correct} / ${matchLeft.length} emparejados correctamente`;
+  }
+}
+function resetMatch() {
+  Object.keys(matchedPairs).forEach(k => delete matchedPairs[k]);
+  selectedLeft = null;
+  document.getElementById('match-score').textContent = '';
+  buildMatch();
+}
+
+// ========== CROSSWORD ==========
+function buildCW() {
+  const rows = cwGrid.length;
+  const cols = cwGrid[0].length;
+  const container = document.getElementById('cw-grid-container');
+  const grid = document.createElement('div');
+  grid.className = 'cw-grid';
+  grid.style.gridTemplateColumns = `repeat(${cols}, 42px)`;
+  // Assign numbers
+  const numbers = {};
+  let num = 1;
+  for (let r=0; r<rows; r++) {
+    for (let c=0; c<cols; c++) {
+      if (cwGrid[r][c] === null) continue;
+      const startAcross = (c===0 || cwGrid[r][c-1]===null) && c+1<cols && cwGrid[r][c+1]!==null;
+      const startDown = (r===0 || cwGrid[r-1][c]===null) && r+1<rows && cwGrid[r+1][c]!==null;
+      if (startAcross || startDown) { numbers[`${r},${c}`] = num++; }
+    }
+  }
+  for (let r=0; r<rows; r++) {
+    for (let c=0; c<cols; c++) {
+      const cell = document.createElement('div');
+      cell.className = 'cw-cell';
+      cell.id = `cw-${r}-${c}`;
+      if (cwGrid[r][c] === null) {
+        cell.classList.add('black');
+      } else {
+        if (numbers[`${r},${c}`]) {
+          const numSpan = document.createElement('span');
+          numSpan.className = 'cw-num';
+          numSpan.textContent = numbers[`${r},${c}`];
+          cell.appendChild(numSpan);
+        }
+        const inp = document.createElement('input');
+        inp.type = 'text'; inp.maxLength = 1;
+        inp.id = `cwi-${r}-${c}`;
+        inp.addEventListener('input', e => { e.target.value = e.target.value.toUpperCase().replace(/[^A-ZÁÉÍÓÚ]/g,''); });
+        inp.addEventListener('keydown', e => { if(e.key==='Backspace') e.target.value=''; });
+        cell.appendChild(inp);
+      }
+      grid.appendChild(cell);
+    }
+  }
+  container.appendChild(grid);
+  // Build clues
+  const cluesDiv = document.getElementById('cw-clues-container');
+  let acrossHTML = '<h4>→ Horizontales</h4><ol>';
+  cwCluesAcross.forEach(([startRow, clue]) => {
+    let startCol = 0;
+    for (let c = 0; c < cwGrid[startRow].length; c++) {
+      if (cwGrid[startRow][c] !== null && (c === 0 || cwGrid[startRow][c-1] === null)) {
+        startCol = c; break;
+      }
+    }
+    const n = numbers[`${startRow},${startCol}`] || '?';
+    acrossHTML += `<li value="${n}"><strong>${n}.</strong> ${clue}</li>`;
+  });
+  acrossHTML += '</ol>';
+  let downHTML = '<h4>↓ Verticales</h4><ol>';
+  cwCluesDown.forEach(([startCol, clue]) => {
+    let startRow = 0;
+    for (let r = 0; r < cwGrid.length; r++) {
+      if (cwGrid[r][startCol] !== null && (r === 0 || cwGrid[r-1][startCol] === null)) {
+        startRow = r; break;
+      }
+    }
+    const n = numbers[`${startRow},${startCol}`] || '?';
+    downHTML += `<li value="${n}"><strong>${n}.</strong> ${clue}</li>`;
+  });
+  downHTML += '</ol>';
+  cluesDiv.innerHTML = `<div>${acrossHTML}</div><div>${downHTML}</div>`;
+}
+function checkCW() {
+  const rows = cwGrid.length;
+  const cols = cwGrid[0].length;
+  let correct = 0, total = 0;
+  for (let r=0; r<rows; r++) {
+    for (let c=0; c<cols; c++) {
+      if (cwGrid[r][c] === null) continue;
+      total++;
+      const inp = document.getElementById(`cwi-${r}-${c}`);
+      const cell = document.getElementById(`cw-${r}-${c}`);
+      cell.classList.remove('correct-cell','wrong-cell');
+      if (inp.value.toUpperCase() === cwGrid[r][c].toUpperCase()) {
+        cell.classList.add('correct-cell'); correct++;
+      } else {
+        cell.classList.add('wrong-cell');
+      }
+    }
+  }
+  const sc = document.getElementById('cw-score');
+  sc.textContent = `Puntaje: ${correct} / ${total} letras correctas (${Math.round(correct/total*100)}%)`;
+  sc.style.display = 'block';
+}
+function resetCW() {
+  document.querySelectorAll('[id^=cwi-]').forEach(i => i.value='');
+  document.querySelectorAll('.cw-cell').forEach(c => c.classList.remove('correct-cell','wrong-cell'));
+  document.getElementById('cw-score').style.display='none';
+}
+
+// ========== INIT ==========
+buildMC();
+buildTF();
+buildMatch();
+buildCW();
+</script>
+</body>
+</html>

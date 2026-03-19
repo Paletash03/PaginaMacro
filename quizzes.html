@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retroalimentación | Proyecto Final</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .quiz-hero {
+            text-align: center;
+            padding: 40px 20px 20px;
+        }
+        .quiz-hero h2 {
+            color: #7a1030;
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+        .quiz-hero p {
+            color: #666;
+            font-size: 1rem;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+        .quiz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 36px auto;
+            padding: 0 24px;
+        }
+        .quiz-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.09);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .quiz-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(122,16,48,0.15);
+        }
+        .quiz-card-header {
+            background: #7a1030;
+            color: white;
+            padding: 18px 20px 14px;
+        }
+        .quiz-card-header .unit-num {
+            font-size: 0.78rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .quiz-card-header h3 {
+            margin: 4px 0 0;
+            font-size: 1.05rem;
+        }
+        .quiz-card-body {
+            padding: 16px 20px;
+        }
+        .quiz-card-body .activities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+        .badge {
+            background: #f9f2f4;
+            color: #7a1030;
+            border: 1px solid #e8c5cf;
+            border-radius: 20px;
+            padding: 3px 10px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+        .btn-quiz {
+            display: block;
+            width: 100%;
+            background: #7a1030;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.92rem;
+            transition: background 0.15s;
+        }
+        .btn-quiz:hover {
+            background: #5a0c22;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">IPN</div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="unidad1.html">I. Macroeconomía</a></li>
+                <li><a href="unidad2.html">II. Cuentas Nacionales</a></li>
+                <li><a href="unidad3.html">III. Demanda y Oferta</a></li>
+                <li><a href="unidad4.html">IV. Modelos</a></li>
+                <li><a href="unidad5.html">V. Crisis</a></li>
+                <li><a href="quizzes.html" class="active">📝 Retroalimentación</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="quiz-hero">
+            <h2>📝 Actividades de Retroalimentación</h2>
+            <p>Selecciona una unidad para practicar con opción múltiple, verdadero o falso, relacionar columnas y crucigrama.</p>
+        </div>
+
+        <div class="quiz-grid">
+
+            <div class="quiz-card">
+                <div class="quiz-card-header">
+                    <div class="unit-num">Unidad I</div>
+                    <h3>Macroeconomía</h3>
+                </div>
+                <div class="quiz-card-body">
+                    <div class="activities">
+                        <span class="badge">📋 Opción múltiple</span>
+                        <span class="badge">✔ Verdadero / Falso</span>
+                        <span class="badge">🔗 Relacionar</span>
+                        <span class="badge">🔤 Crucigrama</span>
+                    </div>
+                    <a href="quiz_unidad1.html" class="btn-quiz">Iniciar actividades →</a>
+                </div>
+            </div>
+
+            <div class="quiz-card">
+                <div class="quiz-card-header">
+                    <div class="unit-num">Unidad II</div>
+                    <h3>Sistema de Cuentas Nacionales</h3>
+                </div>
+                <div class="quiz-card-body">
+                    <div class="activities">
+                        <span class="badge">📋 Opción múltiple</span>
+                        <span class="badge">✔ Verdadero / Falso</span>
+                        <span class="badge">🔗 Relacionar</span>
+                        <span class="badge">🔤 Crucigrama</span>
+                    </div>
+                    <a href="quiz_unidad2.html" class="btn-quiz">Iniciar actividades →</a>
+                </div>
+            </div>
+
+            <div class="quiz-card">
+                <div class="quiz-card-header">
+                    <div class="unit-num">Unidad III</div>
+                    <h3>Demanda y Oferta Agregadas</h3>
+                </div>
+                <div class="quiz-card-body">
+                    <div class="activities">
+                        <span class="badge">📋 Opción múltiple</span>
+                        <span class="badge">✔ Verdadero / Falso</span>
+                        <span class="badge">🔗 Relacionar</span>
+                        <span class="badge">🔤 Crucigrama</span>
+                    </div>
+                    <a href="quiz_unidad3.html" class="btn-quiz">Iniciar actividades →</a>
+                </div>
+            </div>
+
+            <div class="quiz-card">
+                <div class="quiz-card-header">
+                    <div class="unit-num">Unidad IV</div>
+                    <h3>Modelos Macroeconómicos</h3>
+                </div>
+                <div class="quiz-card-body">
+                    <div class="activities">
+                        <span class="badge">📋 Opción múltiple</span>
+                        <span class="badge">✔ Verdadero / Falso</span>
+                        <span class="badge">🔗 Relacionar</span>
+                        <span class="badge">🔤 Crucigrama</span>
+                    </div>
+                    <a href="quiz_unidad4.html" class="btn-quiz">Iniciar actividades →</a>
+                </div>
+            </div>
+
+            <div class="quiz-card">
+                <div class="quiz-card-header">
+                    <div class="unit-num">Unidad V</div>
+                    <h3>Fluctuaciones Económicas y Crisis</h3>
+                </div>
+                <div class="quiz-card-body">
+                    <div class="activities">
+                        <span class="badge">📋 Opción múltiple</span>
+                        <span class="badge">✔ Verdadero / Falso</span>
+                        <span class="badge">🔗 Relacionar</span>
+                        <span class="badge">🔤 Crucigrama</span>
+                    </div>
+                    <a href="quiz_unidad5.html" class="btn-quiz">Iniciar actividades →</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>Proyecto Final - Licenciatura en Negocios Digitales | ESCA Santo Tomás</p>
+    </footer>
+
+</body>
+</html>
