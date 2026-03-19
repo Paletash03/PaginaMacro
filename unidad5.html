@@ -5,6 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unidad V - Fluctuaciones y Crisis | Proyecto Final</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .audio-player {
+            background: #f9f2f4;
+            border-left: 4px solid #7a1030;
+            border-radius: 8px;
+            padding: 12px 18px;
+            margin: 20px 0 30px 0;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .audio-player span {
+            color: #7a1030;
+            font-weight: bold;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        .audio-player audio {
+            flex: 1;
+            min-width: 200px;
+            height: 36px;
+            accent-color: #7a1030;
+        }
+        .pdf-viewer {
+            margin: 20px 0 30px 0;
+            border: 2px solid #7a1030;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .pdf-viewer-header {
+            background: #7a1030;
+            color: white;
+            padding: 10px 16px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .pdf-viewer iframe {
+            display: block;
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+        .video-player {
+            margin: 20px 0 30px 0;
+            border: 2px solid #7a1030;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .video-player-header {
+            background: #7a1030;
+            color: white;
+            padding: 10px 16px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .video-player video {
+            display: block;
+            width: 100%;
+            background: #000;
+        }
+    </style>
 </head>
 <body>
 
@@ -25,6 +87,30 @@
     <main>
         <section id="unidad5">
             <h2>Unidad V. Fluctuaciones Económicas y Políticas de Estabilización</h2>
+
+            <!-- 🔊 AUDIO GENERAL — reemplaza "audios/unidad5.mp3" con el nombre de tu archivo -->
+            <div class="audio-player">
+                <span>🎧 Audio de la unidad</span>
+                <audio controls>
+                    <source src="audios/unidad5.mp3" type="audio/mpeg">
+                    Tu navegador no soporta audio HTML5.
+                </audio>
+            </div>
+
+            <!-- 📄 PDF GENERAL — reemplaza "pdfs/unidad5.pdf" con el nombre de tu archivo -->
+            <div class="pdf-viewer">
+                <div class="pdf-viewer-header">📄 Material de la Unidad V</div>
+                <iframe src="pdfs/unidad5.pdf"></iframe>
+            </div>
+
+            <!-- 🎬 VIDEO GENERAL — reemplaza "videos/unidad5.mp4" con el nombre de tu archivo -->
+            <div class="video-player">
+                <div class="video-player-header">🎬 Video de la Unidad V</div>
+                <video controls>
+                    <source src="videos/unidad5.mp4" type="video/mp4">
+                    Tu navegador no soporta video HTML5.
+                </video>
+            </div>
 
             <h3>5.1 El Ciclo Económico</h3>
             
